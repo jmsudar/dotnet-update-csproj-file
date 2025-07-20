@@ -1,0 +1,127 @@
+name: Update CSProj
+description: 'Update .NET project (.csproj) files with package metadata'
+branding:
+  icon: 'package'
+  color: 'green'
+inputs:
+  file-path:
+    description: 'The path to the csproj file'
+    required: false
+    default: ''
+  target-framework:
+    description: 'The framework for your dotnet build'
+    required: false
+    default: '6.0'
+  implicit-usings:
+    description: 'Whether or not to use implicit usings'
+    required: false
+    default: false
+  nullable:
+    description: 'Whether or not to use nullable reference types'
+    required: false
+    default: true
+  package-id:
+    description: 'The package id for your project'
+    required: false
+    default: ''
+  version:
+    description: 'The current version for your project'
+    required: false
+    default: ''
+  author:
+    description: |
+      The author of the project 
+      Defaults to repo owner
+    required: true
+    default: ''
+  package-tags:
+    description: 'The tags for your package'
+    required: false
+    default: ''
+  repository-url:
+    description: |
+      The repository URL for your project
+    required: true
+    default: ''
+  package-license:
+    description: 'The license for your package'
+    required: true
+    default: ''
+  package-project-url:
+    description: |
+      The project URL for your package
+    required: false
+    default: ''
+  package-readme-file:
+    description: 'The readme file for your package'
+    required: false
+    default: 'README.md'
+  github-token:
+    description: 'Token from the calling action to confer repo permissions'
+    required: true
+    default: ''
+runs:
+  using: 'composite'
+  steps:
+    - name: Check required inputs
+      shell: bash
+      env:
+        AUTHOR: ${{ inputs.author }}
+        REPOSITORY_URL: ${{ inputs.repository-url }}
+        PACKAGE_LICENSE: ${{ inputs.package-license }}
+      run: |
+        if [[ -z "${AUTHOR}" || -z "${REPOSITORY_URL}" || -z "${PACKAGE_LICENSE}" ]]; then
+          echo "One or more required inputs are missing."
+          echo "author: ${AUTHOR}"
+          echo "repository-url: ${REPOSITORY_URL}"
+          echo "package-license: ${PACKAGE_LICENSE}"
+          exit 1
+        fi
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        repository: "jmsudar/dotnet-update-csproj-file"
+        path: "dotnet-update-cs-proj-file"
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ inputs.target-framework || '6.0' }}
+
+    - name: Set Project Filepath
+      run: |
+        update_filepath="$(find . -name "DotNet.UpdateCSProjFile.csproj" 2>/dev/null)"
+        echo "UPDATE_FILEPATH=$update_filepath" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Build and run UpdateCSProj
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        FILE_PATH: ${{ inputs.file-path }}
+        TARGET_FRAMEWORK: 'net${{ inputs.target-framework }}'
+        IMPLICIT_USINGS: ${{ inputs.implicit-usings }}
+        NULLABLE: ${{ inputs.nullable }}
+        PACKAGE_ID: ${{ inputs.package-id }}
+        VERSION: ${{ inputs.version }}
+        AUTHOR: ${{ inputs.author }}
+        PACKAGE_TAGS: ${{ inputs.package-tags }}
+        REPOSITORY_URL: ${{ inputs.repository-url }}
+        PACKAGE_LICENSE: ${{ inputs.package-license }}
+        PACKAGE_PROJECT_URL: ${{ inputs.package-project-url }}
+        PACKAGE_README_FILE: ${{ inputs.package-readme-file }}
+      run: |
+        dotnet run --project "${UPDATE_FILEPATH}" -- \
+          --filePath="${FILE_PATH}" \
+          --targetFramework="${TARGET_FRAMEWORK}" \
+          --implicitUsings="${IMPLICIT_USINGS}" \
+          --nullable="${NULLABLE}" \
+          --packageId="${PACKAGE_ID}" \
+          --version="${VERSION}" \
+          --author="${AUTHOR}" \
+          --packageTags="${PACKAGE_TAGS}" \
+          --repositoryUrl="${REPOSITORY_URL}" \
+          --packageLicense="${PACKAGE_LICENSE}" \
+          --packageProjectUrl="${PACKAGE_PROJECT_URL}" \
+          --packageReadmeFile="${PACKAGE_README_FILE}"
+      shell: bash

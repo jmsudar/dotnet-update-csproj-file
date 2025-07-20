@@ -1,0 +1,17 @@
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/bin/Debug/net6.0/DotNet.UpdateCSProjFile
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/bin/Debug/net6.0/DotNet.UpdateCSProjFile.deps.json
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/bin/Debug/net6.0/DotNet.UpdateCSProjFile.runtimeconfig.json
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/bin/Debug/net6.0/DotNet.UpdateCSProjFile.dll
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/bin/Debug/net6.0/DotNet.UpdateCSProjFile.pdb
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/bin/Debug/net6.0/XML.dll
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.csproj.AssemblyReference.cache
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.AssemblyInfoInputs.cache
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.AssemblyInfo.cs
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.csproj.CoreCompileInputs.cache
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.csproj.CopyComplete
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.dll
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/refint/DotNet.UpdateCSProjFile.dll
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.pdb
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/DotNet.UpdateCSProjFile.genruntimeconfig.cache
+/Users/sudar/Dropbox/Programming/dotnet-update-csproj-file/src/DotNet.UpdateCSProjFile/obj/Debug/net6.0/ref/DotNet.UpdateCSProjFile.dll

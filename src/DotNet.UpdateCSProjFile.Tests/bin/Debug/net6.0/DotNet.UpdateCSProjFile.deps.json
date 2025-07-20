@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DotNet.UpdateCSProjFile/1.0.0": {
+        "dependencies": {
+          "jmsudar.DotNet.Xml": "1.10.0"
+        },
+        "runtime": {
+          "DotNet.UpdateCSProjFile.dll": {}
+        }
+      },
+      "jmsudar.DotNet.Xml/1.10.0": {
+        "runtime": {
+          "lib/net6.0/XML.dll": {
+            "assemblyVersion": "1.10.0.0",
+            "fileVersion": "1.10.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotNet.UpdateCSProjFile/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "jmsudar.DotNet.Xml/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VbWtn8eTwqa2FtlIWY1A4kGFNtjFIZHTUP5JhboSrZ7B/KX+4Kwksyi5kx35DHz8IrnGYiqi+832YzcYBv9cqg==",
+      "path": "jmsudar.dotnet.xml/1.10.0",
+      "hashPath": "jmsudar.dotnet.xml.1.10.0.nupkg.sha512"
+    }
+  }
+}
